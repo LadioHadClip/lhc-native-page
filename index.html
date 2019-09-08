@@ -5,47 +5,100 @@
     <meta charset="utf-8">
     <title>LadioHadClip's Adventure</title>
     <link rel="stylesheet" href="styles/rubik_loading.css">
+    <link rel="stylesheet" href="styles/main_layout.css">
 </head>
 
-<body>
-    <div>
-        <h1>Hello, this is LadioHadClip's github page.</h1>
-        <img src="" alt="My test image">
-    </div>
-    <div class="rubiks-loader">
-        <div class="cube">
-            <!-- base position -->
-            <div class="face front piece row-top    col-left   yellow"></div>
-            <div class="face front piece row-top    col-center green "></div>
-            <div class="face front piece row-top    col-right  white "></div>
-            <div class="face front piece row-center col-left   blue  "></div>
-            <div class="face front piece row-center col-center green "></div>
-            <div class="face front piece row-center col-right  blue  "></div>
-            <div class="face front piece row-bottom col-left   green "></div>
-            <div class="face front piece row-bottom col-center yellow"></div>
-            <div class="face front piece row-bottom col-right  red   "></div>
-
-            <!-- first step: E', equator inverted -->
-            <div class="face down  piece row-top    col-center green "></div>
-            <div class="face down  piece row-center col-center red   "></div>
-            <div class="face down  piece row-bottom col-center white "></div>
-
-            <!-- second step: M, middle -->
-            <div class="face right piece row-center col-left   yellow"></div>
-            <div class="face right piece row-center col-center green "></div>
-            <div class="face right piece row-center col-right  blue  "></div>
-
-            <!-- third step: L, left -->
-            <div class="face up    piece row-top    col-left   yellow"></div>
-            <div class="face up    piece row-center col-left   blue  "></div>
-            <div class="face up    piece row-bottom col-left   green "></div>
-
-            <!-- fourth step: D, down -->
-            <div class="face left  piece row-bottom col-left   green "></div>
-            <div class="face left  piece row-bottom col-center yellow"></div>
-            <div class="face left  piece row-bottom col-right  red   "></div>
+<header id="page-header">
+    <div id="header-content">
+        <div id="info-container" class="fadeindown">
+            <div id="info-avatar" class="info-item">
+                <img src="https://avatars3.githubusercontent.com/u/40979093?s=200&v=4" alt="My test image">
+            </div>
+            <div id="info-text" class="info-item" >
+                <p class="github-nickname">LadioHadClip</p>
+                <p class="github-name">Yunzhe Li</p>
+                <p class="github-location">Hangzhou, Zhejiang, China</p>
+                <p class="github-status">Noobing</p>
+            </div>
+        </div>
+        <div id="page-title" class="fadeinup">
+            <h1>Hello, this is LadioHadClip's github page.</h1>
         </div>
     </div>
+</header>
+
+<body>
+    <div id="content-container">
+        <div class="nav-container">
+            <div class="nav-tab" id="article-tab"><div>Articles</div></div>
+            <div class="nav-tab selected" id="animation-tab"><div>Animations</div></div>
+            <div class="nav-tab" id="about-tab"><div>About</div></div>
+        </div>
+        <div class="content-canvas">
+            <div class="animation-canvas">
+                <div class="selection-list-container">
+                    <div class="selection-list">
+                        <div class="selection-item">1</div>
+                        <div class="selection-item">2</div>
+                    </div>
+                </div>
+                <div class='canvas-main-container'>
+                    <div class="canvas-actual">
+                        <div class="rubiks-loader">
+                            <div class="cube">
+                                <!-- base position -->
+                                <div class="face front piece row-top    col-left   yellow"></div>
+                                <div class="face front piece row-top    col-center green "></div>
+                                <div class="face front piece row-top    col-right  white "></div>
+                                <div class="face front piece row-center col-left   blue  "></div>
+                                <div class="face front piece row-center col-center green "></div>
+                                <div class="face front piece row-center col-right  blue  "></div>
+                                <div class="face front piece row-bottom col-left   green "></div>
+                                <div class="face front piece row-bottom col-center yellow"></div>
+                                <div class="face front piece row-bottom col-right  red   "></div>
+                    
+                                <!-- first step: E', equator inverted -->
+                                <div class="face down  piece row-top    col-center green "></div>
+                                <div class="face down  piece row-center col-center red   "></div>
+                                <div class="face down  piece row-bottom col-center white "></div>
+                    
+                                <!-- second step: M, middle -->
+                                <div class="face right piece row-center col-left   yellow"></div>
+                                <div class="face right piece row-center col-center green "></div>
+                                <div class="face right piece row-center col-right  blue  "></div>
+                    
+                                <!-- third step: L, left -->
+                                <div class="face up    piece row-top    col-left   yellow"></div>
+                                <div class="face up    piece row-center col-left   blue  "></div>
+                                <div class="face up    piece row-bottom col-left   green "></div>
+                    
+                                <!-- fourth step: D, down -->
+                                <div class="face left  piece row-bottom col-left   green "></div>
+                                <div class="face left  piece row-bottom col-center yellow"></div>
+                                <div class="face left  piece row-bottom col-right  red   "></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var btns = document.getElementsByClassName("nav-tab");
+        Array.prototype.forEach.call(
+            btns, obj => obj.addEventListener(
+                "click", ev => {
+                    if (obj.classList.contains("selected")){
+                        obj.classList.toggle("selected");
+                        alert("untoggle");
+                    }else{
+                        obj.classList.toggle("selected");
+                        alert("toggle");
+                    }
+                }
+            )
+        );
+    </script>
 </body>
 
 </html>

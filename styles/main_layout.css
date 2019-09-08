@@ -1,0 +1,233 @@
+#page-header {
+    background-color: cornflowerblue;
+    height: 200px;
+}
+
+#header-content {
+    overflow-x: hidden;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    max-width: 64rem;
+    background-color: seagreen
+}
+
+.fadeindown {
+    -webkit-animation: slide-fade-in-down 3s;
+    animation: slide-fade-in-down 3s;
+}
+
+@keyframes slide-fade-in-down {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slide-fade-in-down {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+
+.fadeinup {
+    animation-name: slide-fade-in-up;
+    animation-duration: 3s;
+}
+
+@keyframes slide-fade-in-up {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(0px);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slide-fade-in-up {
+    0% {
+        -webkit-transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    50% {
+        -webkit-transform: translate(0px);
+        opacity: 1;
+    }
+}
+
+
+/* Info part */
+
+#info-container {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    width: 400px;
+    margin: 0;
+}
+
+#info-avatar {
+    flex: 0 1 auto;
+    margin: auto 1%;
+    width: 100px;
+    height: 100px;
+}
+
+#info-avatar > img {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#info-text {
+    flex: 1 1 auto;
+    width: 100px;
+    margin: auto 1%;
+}
+
+#info-text > p {
+    margin: auto 0;
+}
+
+#page-title {
+    margin: auto 5%;
+}
+
+/* Content part */
+
+#content-container {
+    margin: auto;
+    padding: 50px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 64rem;
+    background-color: gray;
+}
+
+.nav-container {
+    /* position: fixed; */
+    position: sticky;
+    top: -15px;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex: 0 1 auto;
+    height: 60px;
+    border: 0px solid aquamarine;
+    background-color: white;
+    z-index: 1;
+}
+
+.nav-container::after {
+    content: "Top";
+    margin-left: auto;
+    margin-right: 0;
+    padding: 15px 0;
+}
+
+.nav-container > .nav-tab {
+    flex: 0 1 auto;
+    width: 200px;
+    height: 45px;
+    margin: auto 0 0 0;
+    color: ghostwhite;
+    background-color: darkorange;
+    border-radius: 30px 10px 0px 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-container > .nav-tab:hover {
+    color: black;
+    background-color: aqua;
+}
+
+.nav-container > .nav-tab.selected {
+    background-color: sienna;
+}
+
+.nav-container > .nav-tab > div {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Canvas */
+
+.content-canvas {
+    min-height: 800px;
+    background-color: blanchedalmond
+}
+
+.content-canvas > .animation-canvas {
+    display: flex;
+    flex-direction: row;
+}
+
+.content-canvas > .animation-canvas > .selection-list-container {
+    margin: 0;
+    padding: 25px;
+    flex: 0 0 auto;
+    width: 15%;
+    border: 1px dashed cornflowerblue;
+}
+
+.content-canvas > .animation-canvas > .selection-list-container > 
+.selection-list {
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    background-color: aliceblue
+}
+
+.content-canvas > .animation-canvas > .selection-list-container > 
+.selection-list > .selection-item {
+    margin: 5px 10px;
+    padding: 10px 0;
+    flex: 0 0 auto;
+    text-align: center;
+    background-color: white;
+    border-style: solid;
+    border-color: darkslateblue;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 2px;
+}
+
+.content-canvas > .animation-canvas > .selection-list-container > 
+.selection-list > .selection-item:hover {
+    background-color: deeppink;
+}
+
+.content-canvas > .animation-canvas > .canvas-main-container {
+    background-color: yellowgreen;
+    margin: 0;
+    padding: 25px;
+    flex: 0 1 auto;
+    width: 85%;
+    min-height: 800px;
+    border: 1px dashed cornflowerblue;
+}
+
+.content-canvas > .animation-canvas > .canvas-main-container > 
+.canvas-actual{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue
+}
