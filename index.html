@@ -21,11 +21,11 @@
                     var loc = document.getElementById("github-location");
                     var stat = document.getElementById("github-status");
 
-                    avatar.src = res['avatar_url'];
-                    nickname.innerText = res['login'];
-                    name.innerText = res['name'];
-                    loc.innerText = res['location'];
-                    stat.innerText = res['bio'];
+                    avatar.src = res.avatar_url;
+                    nickname.innerText = res.login;
+                    name.innerText = res.name;
+                    loc.innerText = res.location;
+                    stat.innerText = res.bio;
                 });
             </script>
             <div id="info-avatar" class="info-item">
