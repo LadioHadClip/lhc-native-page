@@ -11,16 +11,34 @@
 <header id="page-header">
     <div id="header-content">
         <div id="info-container" class="fadeindown">
+            <script>
+                fetch("https://api.github.com/users/LadioHadClip")
+                .then(data => {return data.json()})
+                .then(res => {
+                    var avatar = document.getElementById("avatar-place");
+                    var nickname = document.getElementById("github-nickname");
+                    var name = document.getElementById("github-name");
+                    var loc = document.getElementById("github-location");
+                    var stat = document.getElementById("github-status");
+
+                    avatar.src = res['avatar_url'];
+                    nickname.innerText = res['login'];
+                    name.innerText = res['name'];
+                    loc.innerText = res['location'];
+                    stat.innerText = res['bio'];
+                });
+            </script>
             <div id="info-avatar" class="info-item">
-                <img src="https://avatars3.githubusercontent.com/u/40979093?s=200&v=4" alt="My test image">
+                <img id="avatar-place" src="" alt="My test image">
             </div>
             <div id="info-text" class="info-item" >
-                <p class="github-nickname">LadioHadClip</p>
-                <p class="github-name">Yunzhe Li</p>
-                <p class="github-location">Hangzhou, Zhejiang, China</p>
-                <p class="github-status">Noobing</p>
+                <p id="github-nickname"></p>
+                <p id="github-name"></p>
+                <p id="github-location"></p>
+                <p id="github-status"></p>
             </div>
         </div>
+        
         <div id="page-title" class="fadeinup">
             <h1>Hello, this is LadioHadClip's github page.</h1>
         </div>
@@ -34,6 +52,22 @@
             <div class="nav-tab selected" id="animation-tab"><div>Animations</div></div>
             <div class="nav-tab" id="about-tab"><div>About</div></div>
         </div>
+        <script>
+            var btns = document.getElementsByClassName("nav-tab");
+            Array.prototype.forEach.call(
+                btns, obj => obj.addEventListener(
+                    "click", ev => {
+                        if (obj.classList.contains("selected")){
+                            obj.classList.toggle("selected");
+                            alert("untoggle");
+                        }else{
+                            obj.classList.toggle("selected");
+                            alert("toggle");
+                        }
+                    }
+                )
+            );
+        </script>
         <div class="content-canvas">
             <div class="animation-canvas">
                 <div class="selection-list-container">
@@ -83,22 +117,6 @@
             </div>
         </div>
     </div>
-    <script>
-        var btns = document.getElementsByClassName("nav-tab");
-        Array.prototype.forEach.call(
-            btns, obj => obj.addEventListener(
-                "click", ev => {
-                    if (obj.classList.contains("selected")){
-                        obj.classList.toggle("selected");
-                        alert("untoggle");
-                    }else{
-                        obj.classList.toggle("selected");
-                        alert("toggle");
-                    }
-                }
-            )
-        );
-    </script>
 </body>
 
 </html>
