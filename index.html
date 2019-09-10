@@ -12,7 +12,10 @@
     <div id="header-content">
         <div id="info-container" class="fadeindown">
             <script>
-                fetch("https://api.github.com/users/LadioHadClip")
+                fetch("https://api.github.com/users/LadioHadClip", {
+                    method: 'GET',
+                    cache: 'default'
+                })
                 .then(data => {return data.json()})
                 .then(res => {
                     var avatar = document.getElementById("avatar-place");
