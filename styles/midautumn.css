@@ -193,6 +193,7 @@ a:visited {
     position: absolute;
     border-radius: 50%;
     transform: rotate(15deg); 
+    --target-opacity: 1;
     animation: fade-in 1s steps(3) 10s both;
 }
 .rabbit-ear2 {
@@ -206,6 +207,7 @@ a:visited {
     position: absolute;
     border-radius: 50%;
     transform: rotate(-15deg);
+    --target-opacity: 1;
     animation: fade-in 1s steps(3) 10s both;
 }
 .rabbit-tail {
@@ -219,6 +221,7 @@ a:visited {
     position: absolute;
     border-radius: 50%;
     transform: rotate(15deg); 
+    --target-opacity: 1;
     animation: fade-in 1s steps(3) 11s both;
 }
 .rabbit-eye {
@@ -232,6 +235,7 @@ a:visited {
     position: absolute;
     border-radius: 50%;
     transform: rotate(15deg); 
+    --target-opacity: 1;
     animation: fade-in 1s steps(3) 11s both;
 }
 .rabbit-leg1 {
@@ -245,6 +249,7 @@ a:visited {
     position: absolute;
     border-radius: 50%;
     transform: rotate(30deg);
+    --target-opacity: 1;
     animation: fade-in 1s steps(3) 12s both;
 }
 .rabbit-leg2 {
@@ -258,6 +263,7 @@ a:visited {
     position: absolute;
     border-radius: 50%;
     transform: rotate(-30deg);
+    --target-opacity: 1;
     animation: fade-in 1s steps(3) 12s both;
 }
 
@@ -474,6 +480,7 @@ a:visited {
     background-color: #C76603;
     border: 4px solid #BA3B00;
     border-radius: 10px;
+    --target-opacity: 1;
     animation: fade-in 1s ease-in 7s both;
 }
 .mooncake > .text p {
@@ -486,10 +493,11 @@ a:visited {
 
 @keyframes fade-in {
     0% {opacity: 0;}
-    100% {opacity: 1;}
+    100% {opacity: var(--target-opacity);}
 }
 
 ul {
+    --target-opacity: 1;
     position: absolute;
     padding: 0;
     margin: 0;
@@ -564,19 +572,18 @@ ul > li:nth-child(10) {
 }
 
 .notes.hover-text{
-    opacity: 0;
-}
-
-.notes.hover-text:hover {
     display: block;
     color: cornflowerblue;
     background-color: black;
+    opacity: 0;
+    --target-opacity: 0.7;
+    animation: fade-in 3s ease-in 12s forwards;
+}
+
+.notes.hover-text:hover {
     opacity: 0.7;
 }
 
 .notes.hover-text:active {
-    display: block;
-    color: cornflowerblue;
-    background-color: black;
     opacity: 0.7;
 }
