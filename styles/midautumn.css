@@ -1,14 +1,47 @@
-/* CSS Animation: moon-cycle */
-/* Thanks to Souleste@CodePen ! */
-/* Original Link: https://codepen.io/Souleste/pen/vwvKgN?&page=3 */
+/* Refrence Animations: */
+
+    /* CSS Animation: moon-cycle */
+    /* Thanks to Souleste@CodePen ! */
+    /* Original Link: https://codepen.io/Souleste/pen/vwvKgN?&page=3 */
 
 /* TODO: Less/Sass */
 /* TODO: Browser Compatibility */
 
+html {
+    line-height: 1.15; /* Correct the line height in all browsers */
+    -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS. */
+}
+
 body {
+    margin: 0;
+    padding: 0;
     background: #000;
 	background-image: url(
         "https://www.transparenttextures.com/patterns/stardust.png");
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:link {
+    color: aqua;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+a:active {
+    color: palegreen;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: peru;
 }
 
 .container {
@@ -26,7 +59,7 @@ body {
     top: -200px;
     left: -5em;
     font-size: 2em;
-    width: 18em; height: 1.25em;
+    width: 18em; height: 1em;
     border-right: 1px solid transparent;
     animation: typing 7s steps(15, end) 5s forwards;
     font-family: Consolas;
@@ -38,6 +71,40 @@ body {
 @keyframes typing {
     from { width: 0; opacity: 1;}
     to { width: 15em; opacity: 1;}
+}
+
+.notes {
+    position: absolute;
+    color: #ffffff;
+    top: -250px;
+    left: -550px;
+    line-height: 1.5em;
+    padding: 10px 10px 10px 10px;
+    height: 20em;
+    width: 20em;
+    font-family: Consolas;
+    /* word-break: break-all; */
+    opacity: 0.8;
+}
+
+.notes > ol {
+    counter-reset: li;
+    list-style: none;
+}
+
+.notes > ol > li::before {
+    color: #000000;
+    content: counter(li);
+    counter-increment: li;
+    background: rgb(47, 255, 245);
+    position: absolute;
+    left: 1em; 
+    height: 1.25em;
+    width: 1.25em;
+    line-height: 1.25em;
+    border: 0.2em solid rgb(47, 255, 245);
+    border-radius: 50%;
+    text-align: center;
 }
 
 .moon {
@@ -447,50 +514,50 @@ ul.right-qu {
     left: -15px;
     /* transform: rotate(270deg); */
 }
-li {
+ul > li {
     border: 1px solid #BA3B00;
     height: 0;
     padding: 0;
     margin: 0 0 4px 0;
     list-style: none;
 }
-li:first-child {
+ul > li:first-child {
     width: 13px;
     margin-left: 22px;
 }
-li:nth-child(2) {
+ul > li:nth-child(2) {
     width: 16px;
     margin-left: 19px;
 }
-li:nth-child(3) {
+ul > li:nth-child(3) {
     width: 19px;
     margin-left: 16px;
 }
-li:nth-child(4) {
+ul > li:nth-child(4) {
     width: 22px;
     margin-left: 13px;
 }
-li:nth-child(5) {
+ul > li:nth-child(5) {
     width: 25px;
     margin-left: 10px;
 }
-li:nth-child(6) {
+ul > li:nth-child(6) {
     width: 25px;
     margin-left: 10px;
 }
-li:nth-child(7) {
+ul > li:nth-child(7) {
     width: 22px;
     margin-left: 13px;
 }
-li:nth-child(8) {
+ul > li:nth-child(8) {
     width: 19px;
     margin-left: 16px;
 }
-li:nth-child(9) {
+ul > li:nth-child(9) {
     width: 16px;
     margin-left: 19px;
 }
-li:nth-child(10) {
+ul > li:nth-child(10) {
     width: 13px;
     margin-left: 22px;
 }
