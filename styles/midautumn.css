@@ -2,6 +2,9 @@
 /* Thanks to Souleste@CodePen ! */
 /* Original Link: https://codepen.io/Souleste/pen/vwvKgN?&page=3 */
 
+/* TODO: Less/Sass */
+/* TODO: Browser Compatibility */
+
 body {
     background: #000;
 	background-image: url(
@@ -15,6 +18,26 @@ body {
     transform: translate(-50%,-50%);
     z-index: 0;
     transform-style: preserve-3d;
+}
+
+.typing {
+    position: absolute;
+    color: #ffffff;
+    top: -200px;
+    left: -5em;
+    font-size: 2em;
+    width: 18em; height: 1.25em;
+    border-right: 1px solid transparent;
+    animation: typing 7s steps(15, end) 5s forwards;
+    font-family: Consolas;
+    word-break: break-all;
+    overflow: hidden;
+    opacity: 0;
+}
+
+@keyframes typing {
+    from { width: 0; opacity: 1;}
+    to { width: 15em; opacity: 1;}
 }
 
 .moon {
