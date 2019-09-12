@@ -57,7 +57,7 @@ a:visited {
     position: absolute;
     color: #ffffff;
     top: -200px;
-    left: -5em;
+    left: -4.5em;
     font-size: 2em;
     width: 18em; height: 1em;
     border-right: 1px solid transparent;
@@ -76,8 +76,9 @@ a:visited {
 .notes {
     position: absolute;
     color: #ffffff;
-    top: -250px;
-    left: -550px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     line-height: 1.5em;
     padding: 10px 10px 10px 10px;
     height: 20em;
@@ -560,4 +561,22 @@ ul > li:nth-child(9) {
 ul > li:nth-child(10) {
     width: 13px;
     margin-left: 22px;
+}
+
+.notes.hover-text{
+    opacity: 0;
+}
+
+.notes.hover-text:hover {
+    display: block;
+    color: cornflowerblue;
+    background-color: black;
+    opacity: 0.7;
+}
+
+.notes.hover-text:active {
+    display: block;
+    color: cornflowerblue;
+    background-color: black;
+    opacity: 0.7;
 }
