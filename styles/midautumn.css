@@ -1,0 +1,473 @@
+/* CSS Animation: moon-cycle */
+/* Thanks to Souleste@CodePen ! */
+/* Original Link: https://codepen.io/Souleste/pen/vwvKgN?&page=3 */
+
+body {
+    background: #000;
+	background-image: url(
+        "https://www.transparenttextures.com/patterns/stardust.png");
+}
+
+.container {
+    position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 0;
+    transform-style: preserve-3d;
+}
+
+.moon {
+	background: #fff;
+	background-image: url(
+        "https://www.transparenttextures.com/patterns/wall-4-light.png");
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 10px 0 rgba(255,255,255,0.9);
+    transform-style: preserve-3d;
+}
+
+.moon-shadow {
+	height: 110px;
+	width: 110px;
+	background: #000000;
+	position: absolute;
+	transform: translate(100px, -5px);
+	animation-name: moon-go;
+	animation-duration: 5s;
+	animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+	border-radius: 50%;
+}
+
+@keyframes moon-go {
+	0% {
+		transform: translate(30px, -5px);
+    }
+    
+	90% {
+        opacity: 1;
+		transform: translate(120px, -5px);
+    }
+    
+    100% {
+        opacity: 0;
+		transform: translate(120px, -5px);
+	}
+}
+
+.moon.benti {
+    animation-name: moon-benti-go, to-elipsis;
+    animation-duration: 3s, 2s;
+    animation-timing-function: ease-in, ease-in-out;
+    animation-delay: 5s, 8s;
+    animation-fill-mode: both, forwards;
+}
+
+@keyframes moon-benti-go {
+    0% {
+		transform: translate(-50%,-50%);
+	}
+	80% {
+		transform: translate(-150px, -50px);
+    }
+    100% {
+		transform: translate(-150px, -50px);
+	}
+}
+
+@keyframes to-elipsis {
+    0% {
+		transform: translate(-150px, -50px) scale(1, 1);
+	}
+	100% {
+		transform: translate(-150px, -50px) scale(1.8, 1);
+    }
+}
+
+.rabbit-ear1 {
+    width: 20px;
+    height: 60px;
+    top: -30px;
+    left: -10px;
+    background-color: #cccccc;
+    background-image: url(
+        "https://www.transparenttextures.com/patterns/wall-4-light.png");
+    position: absolute;
+    border-radius: 50%;
+    transform: rotate(15deg); 
+    animation: fade-in 1s steps(3) 10s both;
+}
+.rabbit-ear2 {
+    width: 20px;
+    height: 60px;
+    top: -30px;
+    left: -30px;
+    background-color: #cccccc;
+    background-image: url(
+        "https://www.transparenttextures.com/patterns/wall-4-light.png");
+    position: absolute;
+    border-radius: 50%;
+    transform: rotate(-15deg);
+    animation: fade-in 1s steps(3) 10s both;
+}
+.rabbit-tail {
+    width: 20px;
+    height: 20px;
+    top: 30px;
+    left: -150px;
+    background-color: #cccccc;
+    background-image: url(
+        "https://www.transparenttextures.com/patterns/wall-4-light.png");
+    position: absolute;
+    border-radius: 50%;
+    transform: rotate(15deg); 
+    animation: fade-in 1s steps(3) 11s both;
+}
+.rabbit-eye {
+    width: 10px;
+    height: 10px;
+    top:35px;
+    left: 0px;
+    background-color: darkred;
+    background-image: url(
+        "https://www.transparenttextures.com/patterns/wall-4-light.png");
+    position: absolute;
+    border-radius: 50%;
+    transform: rotate(15deg); 
+    animation: fade-in 1s steps(3) 11s both;
+}
+.rabbit-leg1 {
+    width: 20px;
+    height: 30px;
+    top: 85px;
+    left: -105px;
+    background-color: #cccccc;
+    background-image: url(
+        "https://www.transparenttextures.com/patterns/wall-4-light.png");
+    position: absolute;
+    border-radius: 50%;
+    transform: rotate(30deg);
+    animation: fade-in 1s steps(3) 12s both;
+}
+.rabbit-leg2 {
+    width: 20px;
+    height: 30px;
+    top: 85px;
+    left: -10px;
+    background-color: #cccccc;
+    background-image: url(
+        "https://www.transparenttextures.com/patterns/wall-4-light.png");
+    position: absolute;
+    border-radius: 50%;
+    transform: rotate(-30deg);
+    animation: fade-in 1s steps(3) 12s both;
+}
+
+.mooncake {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    background-color: #C76603;
+    border: 4px solid #BA3B00;
+    animation: moon-fenshen-go 3s ease-in 5s both;
+}
+
+@keyframes moon-fenshen-go {
+	0% {
+        opacity: 0;
+        transform: translate(0px, 0px);
+        border: 4px solid #C76603; 
+	}
+	80% {
+        opacity: 1;
+        transform: translate(80px, 50px);
+        background-color: #C76603;
+    }
+    100% {
+        opacity: 1;
+        transform: translate(80px, 50px);
+        background-color: #C76603;
+        border: 4px solid #BA3B00;
+	}
+}
+
+.ear {
+    background-color: #C76603;
+    border: 2px solid #BA3B00;
+    border-radius: 50%;
+    top: -5px;
+    left: 42px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    z-index: -1;
+    animation: ear-go 3s ease-in 5s both;
+}
+
+@keyframes ear-go {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 0px);
+	}
+	80% {
+        opacity: 0;
+        transform-origin: 12px 59px;
+        transform: translate(80px, 50px) rotate(var(--deg));
+    }
+    100% {
+        opacity: 1;
+        transform-origin: 12px 59px;
+        transform: translate(80px, 50px) rotate(var(--deg));
+	}
+}
+
+.ear.index1 {
+    --deg: 0deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index2 {
+    --deg: 15deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index3 {
+    --deg: 30deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index4 {
+    --deg: 45deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index5 {
+    --deg: 60deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index6 {
+    --deg: 75deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index7 {
+    --deg: 90deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index8 {
+    --deg: 105deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index9 {
+    --deg: 120deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index10 {
+    --deg: 135deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index11 {
+    --deg: 150deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index12 {
+    --deg: 165deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index13 {
+    --deg: 180deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index14 {
+    --deg: 195deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index15 {
+    --deg: 210deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index16 {
+    --deg: 225deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index17 {
+    --deg: 240deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index18 {
+    --deg: 255deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index19 {
+    --deg: 270deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index20 {
+    --deg: 285deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index21 {
+    --deg: 300deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index22 {
+    --deg: 315deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index23 {
+    --deg: 330deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+.ear.index24 {
+    --deg: 345deg;
+    /* transform-origin: 12px 59px;
+    transform: rotate(var(--deg)); */
+}
+
+
+.mooncake > .text {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    top: 25px;
+    left: 23px;
+    background-color: #C76603;
+    border: 4px solid #BA3B00;
+    border-radius: 10px;
+    animation: fade-in 1s ease-in 7s both;
+}
+.mooncake > .text p {
+    font-size: 22px;
+    line-height: 22px;
+    padding: 0;
+    margin: 0;
+    color: #BA3B00;
+}
+
+@keyframes fade-in {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+ul {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    animation: fade-in 1s ease-in 7s both;
+}
+ul.top-qu {
+    top: -24px;
+    left: 28px;
+    transform: rotate(90deg);
+}
+ul.left-qu {
+    top: 20px;
+    left: 75px;
+    transform: rotate(180deg);
+}
+ul.bottom-qu {
+    top: 66px;
+    left: 32px;
+    transform: rotate(270deg);
+}
+ul.right-qu {
+    top: 24px;
+    left: -15px;
+    /* transform: rotate(270deg); */
+}
+li {
+    border: 1px solid #BA3B00;
+    height: 0;
+    padding: 0;
+    margin: 0 0 4px 0;
+    list-style: none;
+}
+li:first-child {
+    width: 13px;
+    margin-left: 22px;
+}
+li:nth-child(2) {
+    width: 16px;
+    margin-left: 19px;
+}
+li:nth-child(3) {
+    width: 19px;
+    margin-left: 16px;
+}
+li:nth-child(4) {
+    width: 22px;
+    margin-left: 13px;
+}
+li:nth-child(5) {
+    width: 25px;
+    margin-left: 10px;
+}
+li:nth-child(6) {
+    width: 25px;
+    margin-left: 10px;
+}
+li:nth-child(7) {
+    width: 22px;
+    margin-left: 13px;
+}
+li:nth-child(8) {
+    width: 19px;
+    margin-left: 16px;
+}
+li:nth-child(9) {
+    width: 16px;
+    margin-left: 19px;
+}
+li:nth-child(10) {
+    width: 13px;
+    margin-left: 22px;
+}
