@@ -225,7 +225,8 @@ div.hidden-search-bar > .hidden-search-input {
     width: 16vw;
     height: 400px;
     border-radius: 10px;
-    border: #000000 1px solid;
+    /* border: #000000 1px solid; */
+    box-shadow: 1px 1px 5px;
 }
 
 .main-content-container {
