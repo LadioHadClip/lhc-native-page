@@ -6,119 +6,142 @@
     <title>LadioHadClip's Adventure</title>
     <link rel="stylesheet" href="styles/rubik_loading.css">
     <link rel="stylesheet" href="styles/main_layout.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/209eaf2035.js"></script>
 </head>
 
-<header id="page-header">
-    <div id="header-content">
-        <div id="info-container" class="fadeindown">
-            <script>
-                fetch("https://api.github.com/users/LadioHadClip", {
-                    method: 'GET',
-                    cache: 'default'
-                })
-                .then(data => {return data.json()})
-                .then(res => {
-                    var avatar = document.getElementById("avatar-place");
-                    var nickname = document.getElementById("github-nickname");
-                    var name = document.getElementById("github-name");
-                    var loc = document.getElementById("github-location");
-                    var stat = document.getElementById("github-status");
 
-                    avatar.src = res.avatar_url;
-                    nickname.innerText = res.login;
-                    name.innerText = res.name;
-                    loc.innerText = res.location;
-                    stat.innerText = res.bio;
-                });
-            </script>
-            <div id="info-avatar" class="info-item">
-                <img id="avatar-place" src="" alt="My test image">
+
+<body>
+    <header>
+        <nav class="nav-bar-container">
+            <div class="nav-bar-info">
+                <!-- <div class="nav-bar-info-avatar">
+                    <img src="https://avatars3.githubusercontent.com/u/40979093?s=50&v=50" alt="">
+                </div>
+                <div class="nav-bar-info-short">
+                    <div class="nav-bar-info-nickname">LadioHadClip</div>
+                    <div class="nav-bar-info-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Hangzhou,PRC</p> 
+                    </div>
+                </div> -->
+                <svg viewBox="0 0 140 40">
+                    <!-- Symbol -->
+                    <symbol id="s-text">
+                        <text text-anchor="middle"
+                            x="70" y="18 dy=".6em">
+                        LadioHadClip's
+                        </text>
+                        <text text-anchor="middle"
+                        x="80" y="28" dy=".6em">
+                        Adventure
+                        </text>
+                    </symbol>
+    
+                    <!-- Duplicate symbols -->
+                    <use xlink:href="#s-text" class="text"
+                            ></use>
+                    <use xlink:href="#s-text" class="text"
+                            ></use>
+                    <use xlink:href="#s-text" class="text"
+                            ></use>
+                    <use xlink:href="#s-text" class="text"
+                            ></use>
+                </svg>
             </div>
-            <div id="info-text" class="info-item" >
-                <p id="github-nickname"></p>
-                <p id="github-name"></p>
-                <p id="github-location"></p>
-                <p id="github-status"></p>
+            <ul class="nav-bar-content">
+                <li><a href="">Articles</a></li>
+                <li><a href="">Animations</a></li>
+                <li><a href="">Tags</a></li>
+                <li><a href="">Timeline</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+            <div class="hidden-search-bar-container">
+                <div class="hidden-search-bar">
+                    <input type="text" class="hidden-search-input" placeholder="Search">
+                    <span class="hidden-clear-button">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <span class="hidden-search-button">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+            </div> 
+        </nav>
+        <!-- <script>
+            fetch("https://api.github.com/users/LadioHadClip", {
+                method: 'GET',
+                cache: 'default'
+            })
+            .then(data => {return data.json()})
+            .then(res => {
+                var avatar = document.getElementById("avatar-place");
+                var nickname = document.getElementById("github-nickname");
+                var name = document.getElementById("github-name");
+                var loc = document.getElementById("github-location");
+                var stat = document.getElementById("github-status");
+    
+                avatar.src = res.avatar_url;
+                nickname.innerText = res.login;
+                name.innerText = res.name;
+                loc.innerText = res.location;
+                stat.innerText = res.bio;
+            });
+        </script>
+        <div id="info-avatar" class="info-item">
+            <img id="avatar-place" src="" alt="My test image">
+        </div>
+        <div id="info-text" class="info-item" >
+            <p id="github-nickname"></p>
+            <p id="github-name"></p>
+            <p id="github-location"></p>
+            <p id="github-status"></p>
+        </div> -->
+    </header>
+    <!-- <iframe src="midautumn.html" title="iframe example 1" width="600" height="600">
+        <p>Your browser does not support iframes.</p>
+    </iframe> -->
+    <div class="content-container">
+        <div class="full-info"></div>
+        <div class="main-content-container">
+            <div class="rubiks-loader">
+                <div class="cube">
+                    <!-- base position -->
+                    <div class="face front piece row-top    col-left   yellow"></div>
+                    <div class="face front piece row-top    col-center green "></div>
+                    <div class="face front piece row-top    col-right  white "></div>
+                    <div class="face front piece row-center col-left   blue  "></div>
+                    <div class="face front piece row-center col-center green "></div>
+                    <div class="face front piece row-center col-right  blue  "></div>
+                    <div class="face front piece row-bottom col-left   green "></div>
+                    <div class="face front piece row-bottom col-center yellow"></div>
+                    <div class="face front piece row-bottom col-right  red   "></div>
+    
+                    <!-- first step: E', equator inverted -->
+                    <div class="face down  piece row-top    col-center green "></div>
+                    <div class="face down  piece row-center col-center red   "></div>
+                    <div class="face down  piece row-bottom col-center white "></div>
+    
+                    <!-- second step: M, middle -->
+                    <div class="face right piece row-center col-left   yellow"></div>
+                    <div class="face right piece row-center col-center green "></div>
+                    <div class="face right piece row-center col-right  blue  "></div>
+    
+                    <!-- third step: L, left -->
+                    <div class="face up    piece row-top    col-left   yellow"></div>
+                    <div class="face up    piece row-center col-left   blue  "></div>
+                    <div class="face up    piece row-bottom col-left   green "></div>
+    
+                    <!-- fourth step: D, down -->
+                    <div class="face left  piece row-bottom col-left   green "></div>
+                    <div class="face left  piece row-bottom col-center yellow"></div>
+                    <div class="face left  piece row-bottom col-right  red   "></div>
+                </div>
             </div>
         </div>
         
-        <div id="page-title" class="fadeinup">
-            <h1>Hello, this is LadioHadClip's github page.</h1>
-        </div>
-    </div>
-</header>
-
-<body>
-    <div id="content-container">
-        <div class="nav-container">
-            <div class="nav-tab" id="article-tab"><div>Articles</div></div>
-            <div class="nav-tab selected" id="animation-tab"><div>Animations</div></div>
-            <div class="nav-tab" id="about-tab"><div>About</div></div>
-        </div>
-        <script>
-            var btns = document.getElementsByClassName("nav-tab");
-            Array.prototype.forEach.call(
-                btns, obj => obj.addEventListener(
-                    "click", ev => {
-                        if (obj.classList.contains("selected")){
-                            obj.classList.toggle("selected");
-                            alert("untoggle");
-                        }else{
-                            obj.classList.toggle("selected");
-                            alert("toggle");
-                        }
-                    }
-                )
-            );
-        </script>
-        <div class="content-canvas">
-            <div class="animation-canvas">
-                <div class="selection-list-container">
-                    <div class="selection-list">
-                        <div class="selection-item">1</div>
-                        <div class="selection-item">2</div>
-                    </div>
-                </div>
-                <div class='canvas-main-container'>
-                    <div class="canvas-actual">
-                        <div class="rubiks-loader">
-                            <div class="cube">
-                                <!-- base position -->
-                                <div class="face front piece row-top    col-left   yellow"></div>
-                                <div class="face front piece row-top    col-center green "></div>
-                                <div class="face front piece row-top    col-right  white "></div>
-                                <div class="face front piece row-center col-left   blue  "></div>
-                                <div class="face front piece row-center col-center green "></div>
-                                <div class="face front piece row-center col-right  blue  "></div>
-                                <div class="face front piece row-bottom col-left   green "></div>
-                                <div class="face front piece row-bottom col-center yellow"></div>
-                                <div class="face front piece row-bottom col-right  red   "></div>
-                    
-                                <!-- first step: E', equator inverted -->
-                                <div class="face down  piece row-top    col-center green "></div>
-                                <div class="face down  piece row-center col-center red   "></div>
-                                <div class="face down  piece row-bottom col-center white "></div>
-                    
-                                <!-- second step: M, middle -->
-                                <div class="face right piece row-center col-left   yellow"></div>
-                                <div class="face right piece row-center col-center green "></div>
-                                <div class="face right piece row-center col-right  blue  "></div>
-                    
-                                <!-- third step: L, left -->
-                                <div class="face up    piece row-top    col-left   yellow"></div>
-                                <div class="face up    piece row-center col-left   blue  "></div>
-                                <div class="face up    piece row-bottom col-left   green "></div>
-                    
-                                <!-- fourth step: D, down -->
-                                <div class="face left  piece row-bottom col-left   green "></div>
-                                <div class="face left  piece row-bottom col-center yellow"></div>
-                                <div class="face left  piece row-bottom col-right  red   "></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </body>
 
