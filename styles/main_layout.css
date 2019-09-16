@@ -6,6 +6,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    overflow: scroll;
 }
 
 header {
@@ -220,59 +221,181 @@ div.hidden-search-bar > .hidden-search-input {
 }
 
 .full-info {
-    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
     margin: 0 2vw;
     width: 16vw;
-    height: 400px;
+    min-width: 218px;
+    max-width: 219px;
+    height: 390px;
     border-radius: 10px;
     /* border: #000000 1px solid; */
-    box-shadow: 1px 1px 5px;
+    box-shadow: 1px 1px 4px;
+    background-color: #ced6e0;
+    background-image: radial-gradient(#ffffff, #f1f2f6);
+}
+
+.full-info > .full-info-avatar {
+    flex: 0 1 auto;
+    width: 10vw;
+    height: 10vw;
+    margin: 1vw 3vw;
+    border-radius: 50%;
+    background: #cccccc;
+    box-shadow: 1px 1px 10px; 
+}
+
+.full-info > .full-info-avatar > img {
+    width: 10vw;
+    border-radius: 50%;
+}
+
+.full-info > ul.full-info-content {
+    flex: 1 0 auto;
+    width: 12vw;
+    margin: 1vw 2vw;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.full-info > ul.full-info-content > div {
+    flex: 0 1 auto;
+    text-align: center;
+    /* background-color: #cccccc; */
+    margin: 1px auto;
+    padding: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-nickname {
+    /* flex:  0 auto; */
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-name {
+    /* flex: 1 0 auto; */
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 20px;
+    padding: 0;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-location {
+    /* flex: 1 0 auto; */
+    padding: 10px 0 0 0;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-status {
+    /* flex: 1 0 auto; */
+    font-family: 'Chilanka', cursive;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-github {
+    /* flex: 1 0 auto; */
+    padding: 20px 0 5px 0;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-github > span {
+    /* flex: 1 0 auto; */
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0 5px 0 5px;
+    border: 1.2px solid rgba(27,31,35,.2);
+    border-radius: .35em;
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    vertical-align:middle;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-github 
+> .fab.fa-github {
+    /* flex: 1 0 auto; */
+    border: none;
+    vertical-align:middle;
+    margin: 0 6px 0 0;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-github > span:hover {
+    background-color: #e6ebf1;
+    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+    background-position: -.5em;
+    border-color: rgba(27,31,35,.35);
+    cursor: pointer;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-contact {
+    /* flex: 1 0 auto; */
+    font-size: 20px;
+    align-items: center;
+    margin: 1px 0;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-contact > span{
+    /* flex: 1 0 auto; */
+    margin: 0 3px;
+    padding: 0 4px;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-contact > span:hover{
+    /* flex: 1 0 auto; */
+    color: #fafbfc;
+    border-radius: 50%;
+    background-color: #000000;
+    cursor: pointer;
 }
 
 .main-content-container {
     flex: 1 0 auto;
-    min-height: 800px;
+    min-height: 1200px;
     border-radius: 10px;
     margin: 0 1vw;
     border: #000000 1px solid;
+    box-shadow: 1px 1px 3px; 
 }
 
 /* TODO: change SVG */
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
 
-svg {
+.nav-bar-info > svg {
     /* position: absolute; */
     height: 80px;
 }
 
-.text {
+.nav-bar-info > svg > .text {
     fill: none;
     stroke-width: 0.6;
     stroke-dasharray: 0 150;
     stroke-dashoffset: 0;
 }
 
-.text:nth-child(4n + 1) {
+.nav-bar-info > svg > .text:nth-child(4n + 1) {
     stroke: #7bed9f;
     animation: stroke-0 4s ease-in-out forwards;  
 }
 
-.text:nth-child(4n + 2) {
+.nav-bar-info > svg > .text:nth-child(4n + 2) {
     stroke: #ced6e0;
     animation: stroke-1 4s ease-in-out forwards;
 }
 
-.text:nth-child(4n + 3) {
+.nav-bar-info > svg > .text:nth-child(4n + 3) {
     stroke: #7bed9f;
     animation: stroke-2 4s ease-in-out forwards;
 }
 
-.text:nth-child(4n + 4) {
+.nav-bar-info > svg > .text:nth-child(4n + 4) {
     stroke: #ced6e0;
     animation: stroke-3 4s ease-in-out forwards;
 }
-
 
 
 @keyframes stroke-0 {
