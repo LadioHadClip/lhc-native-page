@@ -13,12 +13,13 @@ header {
     position: sticky;
     top: 0px;
     z-index: 1;
+    min-width: 1000px;
 }
 
 .nav-bar-container {
     display: flex;
     height: 80px;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     border: #000000 solid 2px;
     border-left-width: 0;
@@ -216,8 +217,9 @@ div.hidden-search-bar > .hidden-search-input {
 
 .content-container {
     display: flex;
-    max-width: 1000px;
-    margin: 30px auto;
+    max-width: 1200px;
+    min-width: 1000px;
+    margin: 50px auto;
 }
 
 .full-info {
@@ -349,13 +351,35 @@ div.hidden-search-bar > .hidden-search-input {
 }
 
 .main-content-container {
-    flex: 1 0 auto;
+    flex: 1 1 auto;
     min-height: 1200px;
-    min-width: 500px;
+    max-width: 860px;
     border-radius: 10px;
     margin: 0 30px 0 10px;
-    border: #000000 1px solid;
-    box-shadow: 1px 1px 3px; 
+    /* border: #ffffff 5px solid; */
+    /* box-shadow: 1px 1px 8px; */
+    color: #000000;
+    padding: 0px 30px;
+    line-height: 1.4;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main-content-container > h1 {
+    margin-top: 0;
+}
+
+pre, code {
+    background-color: #f0f3f6;
+    padding: 10px;
+    line-height: 1.6;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    display: block;
+    overflow: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 /* TODO: change SVG */

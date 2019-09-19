@@ -6,12 +6,13 @@
     <title>LadioHadClip's Adventure</title>
     <link rel="stylesheet" href="styles/css/rubik_loading.css">
     <link rel="stylesheet" href="styles/css/main_layout.css">
+    <link rel="stylesheet"href="styles/css/fontawesome-all.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Chilanka|Shadows+Into+Light&display=swap" rel="stylesheet">
     <!-- <script src="https://kit.fontawesome.com/209eaf2035.js"></script> -->
     <script defer src="styles/js/fontawesome-all.js"></script>
-    <link href="styles/css/fontawesome-all.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
@@ -32,7 +33,7 @@
                     <!-- Symbol -->
                     <symbol id="s-text">
                         <text text-anchor="middle"
-                            x="80" y="18 dy=".6em">
+                            x="80" y="18" dy="-0.1em">
                         LadioHadClip's
                         </text>
                         <text text-anchor="middle"
@@ -42,12 +43,9 @@
                     </symbol>
     
                     <!-- Duplicate symbols -->
-                    <use xlink:href="#s-text" class="text"
-                            ></use>
-                    <use xlink:href="#s-text" class="text"
-                            ></use>
-                    <use xlink:href="#s-text" class="text"
-                            ></use>
+                    <use xlink:href="#s-text" class="text"></use>
+                    <use xlink:href="#s-text" class="text"></use>
+                    <use xlink:href="#s-text" class="text"></use>
                     <use xlink:href="#s-text" class="text"
                             ></use>
                 </svg>
@@ -136,43 +134,52 @@
                 </div>
             </ul>
         </div>
-        <div class="main-content-container">
-            <div class="rubiks-loader">
-                <div class="cube">
-                    <!-- base position -->
-                    <div class="face front piece row-top    col-left   yellow"></div>
-                    <div class="face front piece row-top    col-center green "></div>
-                    <div class="face front piece row-top    col-right  white "></div>
-                    <div class="face front piece row-center col-left   blue  "></div>
-                    <div class="face front piece row-center col-center green "></div>
-                    <div class="face front piece row-center col-right  blue  "></div>
-                    <div class="face front piece row-bottom col-left   green "></div>
-                    <div class="face front piece row-bottom col-center yellow"></div>
-                    <div class="face front piece row-bottom col-right  red   "></div>
-    
-                    <!-- first step: E', equator inverted -->
-                    <div class="face down  piece row-top    col-center green "></div>
-                    <div class="face down  piece row-center col-center red   "></div>
-                    <div class="face down  piece row-bottom col-center white "></div>
-    
-                    <!-- second step: M, middle -->
-                    <div class="face right piece row-center col-left   yellow"></div>
-                    <div class="face right piece row-center col-center green "></div>
-                    <div class="face right piece row-center col-right  blue  "></div>
-    
-                    <!-- third step: L, left -->
-                    <div class="face up    piece row-top    col-left   yellow"></div>
-                    <div class="face up    piece row-center col-left   blue  "></div>
-                    <div class="face up    piece row-bottom col-left   green "></div>
-    
-                    <!-- fourth step: D, down -->
-                    <div class="face left  piece row-bottom col-left   green "></div>
-                    <div class="face left  piece row-bottom col-center yellow"></div>
-                    <div class="face left  piece row-bottom col-right  red   "></div>
-                </div>
+        <div class="main-content-container"></div>
+        <!-- <div class="rubiks-loader">
+            <div class="cube">
+                <!-- base position -->
+                <div class="face front piece row-top    col-left   yellow"></div>
+                <div class="face front piece row-top    col-center green "></div>
+                <div class="face front piece row-top    col-right  white "></div>
+                <div class="face front piece row-center col-left   blue  "></div>
+                <div class="face front piece row-center col-center green "></div>
+                <div class="face front piece row-center col-right  blue  "></div>
+                <div class="face front piece row-bottom col-left   green "></div>
+                <div class="face front piece row-bottom col-center yellow"></div>
+                <div class="face front piece row-bottom col-right  red   "></div>
+
+                <!-- first step: E', equator inverted -->
+                <div class="face down  piece row-top    col-center green "></div>
+                <div class="face down  piece row-center col-center red   "></div>
+                <div class="face down  piece row-bottom col-center white "></div>
+
+                <!-- second step: M, middle -->
+                <div class="face right piece row-center col-left   yellow"></div>
+                <div class="face right piece row-center col-center green "></div>
+                <div class="face right piece row-center col-right  blue  "></div>
+
+                <!-- third step: L, left -->
+                <div class="face up    piece row-top    col-left   yellow"></div>
+                <div class="face up    piece row-center col-left   blue  "></div>
+                <div class="face up    piece row-bottom col-left   green "></div>
+
+                <!-- fourth step: D, down -->
+                <div class="face left  piece row-bottom col-left   green "></div>
+                <div class="face left  piece row-bottom col-center yellow"></div>
+                <div class="face left  piece row-bottom col-right  red   "></div>
             </div>
-        </div>
-        
+        </div> -->
+        <script>
+            fetch('test.md').then(
+                data => {
+                    data.text().then(
+                        text =>{
+                            document.getElementsByClassName('main-content-container')[0].innerHTML = marked(text);
+                        }
+                    )
+                }
+            )
+        </script>
     </div>
 </body>
 
