@@ -130,16 +130,9 @@ ul.nav-bar-content > li > a {
     text-transform: uppercase;
 }
 
-ul.nav-bar-content > li > a:hover {
-    text-decoration: none;
-    border:#dfe4ea solid 3px;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-top-width: 0;
-}
-
+ul.nav-bar-content > li > a:hover, 
 ul.nav-bar-content > li > a:active {
-    text-decoration: none;
+    /* text-decoration: none; */
     border:#dfe4ea solid 3px;
     border-left-width: 0;
     border-right-width: 0;
@@ -311,6 +304,10 @@ div.hidden-search-bar > .hidden-search-input {
     background-color: #eff3f6;
     background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
     vertical-align:middle;
+}
+
+.full-info > ul.full-info-content > div.full-info-content-github > span > a {
+    text-decoration: none;
 }
 
 .full-info > ul.full-info-content > div.full-info-content-github 

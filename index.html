@@ -51,11 +51,11 @@
                 </svg>
             </div>
             <ul class="nav-bar-content">
-                <li><a href="">Articles</a></li>
-                <li><a href="">Animations</a></li>
-                <li><a href="">Tags</a></li>
-                <li><a href="">Timeline</a></li>
-                <li><a href="">About</a></li>
+                <li class="nav-bar-tab"><a href="">Articles</a></li>
+                <li class="nav-bar-tab"><a href="">Animations</a></li>
+                <li class="nav-bar-tab"><a href="">Tags</a></li>
+                <li class="nav-bar-tab"><a href="">Timeline</a></li>
+                <li class="nav-bar-tab"><a href="">About</a></li>
             </ul>
             <div class="hidden-search-bar-container">
                 <div class="hidden-search-bar">
@@ -123,8 +123,8 @@
                 </div>
                 <div class="full-info-content-github">
                     <i class="fab fa-github"></i>
-                    <span>repos</span>
-                    <span>project</span>
+                    <span><a href="https://github.com/LadioHadClip?tab=repositories" target="lhc-repo-view">repos</a></span>
+                    <span><a href="https://github.com/LadioHadClip/lhc-native-page" target="lhc-project-view">project</a></span>
                 </div>
                 <div class="full-info-content-contact">
                     <span><i class="fas fa-envelope"></i></span>
@@ -169,17 +169,7 @@
                 <div class="face left  piece row-bottom col-right  red   "></div>
             </div>
         </div> -->
-        <script>
-            fetch('test.md').then(
-                data => {
-                    data.text().then(
-                        text =>{
-                            document.getElementsByClassName('main-content-container')[0].innerHTML = marked(text);
-                        }
-                    )
-                }
-            )
-        </script>
+        <script src="styles/js/tab-control.js"></script>
     </div>
 </body>
 
