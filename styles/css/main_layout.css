@@ -369,7 +369,7 @@ div.hidden-search-bar > .hidden-search-input {
     margin-top: 0;
 }
 
-pre, code {
+.main-content-container pre, .main-content-container code {
     background-color: #f0f3f6;
     padding: 10px;
     line-height: 1.6;
