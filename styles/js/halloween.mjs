@@ -37,10 +37,9 @@ class Ghost {
 
         let dx = Math.max(x2 - x1, 0);
         let dy = Math.max(y2 - y1, 0);
-        if (dx * dy > 0)
-            return true;
-        else
-            return false;
+
+        // TODO: no check for mobile device temporarily
+        return false;
     }
     
     reset() {
